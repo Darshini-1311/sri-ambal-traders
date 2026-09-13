@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Plastic Containers | Sri Ambal Traders</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#14251d;--cream:#f8f4ec;--peach:#f0cfbd}*{box-sizing:border-box}body{margin:0;background:var(--cream);font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink)}nav{padding:26px 7%;display:flex;justify-content:space-between;align-items:center}nav a{color:var(--ink);text-decoration:none;font-weight:700}.brand{font:600 1.45rem 'Playfair Display',serif}.hero{min-height:72vh;padding:5vw 7%;display:grid;grid-template-columns:1fr 1.1fr;gap:5vw;align-items:center;background:var(--peach)}.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.16em;color:#8b4734}.hero h1,.details h2{font:600 clamp(3.2rem,6vw,6.4rem)/.95 'Playfair Display',serif;letter-spacing:-.06em;margin:15px 0}.hero p{max-width:490px;line-height:1.8}.photo{height:min(520px,50vw);border-radius:28px;overflow:hidden;background:#f9e0d4;box-shadow:0 25px 45px #65382030;transition:transform .5s}.photo:hover{transform:rotate(1deg) scale(1.025)}.photo video{width:100%;height:100%;display:block;object-fit:contain;object-position:center;background:transparent}.details{padding:110px 7%;text-align:center;max-width:930px;margin:auto}.details p{line-height:1.8;max-width:650px;margin:26px auto}.size-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:38px;text-align:left}.size-card{min-height:150px;padding:22px;background:var(--peach);border-radius:18px;transition:transform .35s ease,box-shadow .35s ease}.size-card:hover{transform:translateY(-8px) scale(1.015);box-shadow:0 20px 30px #65382024}.size-card h3{margin:0;font:600 clamp(1.5rem,2.5vw,2rem)/1 'Playfair Display',serif;letter-spacing:-.04em}.size-card p{margin:14px 0 0;line-height:1.55;font-size:.82rem}.inquiry-button{display:inline-block;margin-top:34px;background:var(--ink);color:white;padding:16px 22px;text-decoration:none;font-weight:700;transition:transform .25s ease,box-shadow .25s ease}.inquiry-button:hover{transform:translateY(-3px);box-shadow:0 12px 20px #14251d2b}.cta{display:inline-block;margin-top:28px;background:var(--ink);color:white;padding:16px 22px;text-decoration:none;font-weight:700}@media(max-width:700px){.hero{grid-template-columns:1fr}.photo{height:360px}.details{padding:70px 7%}.size-options{grid-template-columns:repeat(2,minmax(0,1fr))}.size-card{min-height:135px;padding:18px}}@media(max-width:420px){.size-options{grid-template-columns:1fr}}
+    .photo{position:relative;background:transparent}.photo video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  </style>
+</head>
+<body>
+  <nav><a href="index.html" class="brand">Sri Ambal Traders</a><a href="index.html#collection">← Back to collection</a></nav>
+  <main>
+    <section class="hero">
+      <div><p class="eyebrow">PLASTIC CONTAINERS</p><h1>Packaging for every serving.</h1><p>Food-grade plastic containers designed for everything from small portions and accompaniments to large biryani servings, with practical sizes for everyday food businesses.</p><a class="cta" href="#details">Explore the range ↓</a></div>
+      <div class="photo" aria-label="Plastic containers product showcase">
+        <video src="assets/plastic-containers.mp4" autoplay muted loop playsinline preload="auto" aria-label="Plastic containers in a range of sizes"></video>
+      </div>
+    </section>
+    <section class="details" id="details"><p class="eyebrow">PRACTICAL FOOD PACKAGING</p><h2>Sizes for Every Serving</h2><p>Practical food packaging, available in a versatile range of sizes.</p><p>From compact containers for sauces and accompaniments to larger formats for biryani and complete meal portions, our plastic containers offer a practical range for everyday food packaging needs.</p><div class="size-options"><article class="size-card"><h3>50ml</h3><p>Small portions, sauces and accompaniments</p></article><article class="size-card"><h3>90ml</h3><p>Chutneys, sauces and small servings</p></article><article class="size-card"><h3>100ml</h3><p>Condiments, desserts and side portions</p></article><article class="size-card"><h3>120ml</h3><p>Snacks, accompaniments and small food portions</p></article><article class="size-card"><h3>250ml</h3><p>Individual servings and snacks</p></article><article class="size-card"><h3>300ml</h3><p>Medium food portions and takeaway servings</p></article><article class="size-card"><h3>500ml</h3><p>Generous food portions and biryani</p></article><article class="size-card"><h3>750ml</h3><p>Larger biryani and full meal portions</p></article></div><a class="inquiry-button" href="#" data-product-inquiry="Plastic Containers" data-inquiry-message="Hello Sri Ambal Traders,&#10;&#10;I’m interested in your Plastic Containers.&#10;&#10;I would like to know more about the available sizes (50ml to 750ml), suitable food applications, designs and pricing.&#10;&#10;Please share the details.&#10;&#10;Thank you.">Enquire on WhatsApp →</a></section>
+  </main>
+  <script>
+    const sizeOptions = document.querySelector('.size-options');
+    sizeOptions.insertAdjacentHTML('beforeend', '<article class="size-card"><h3>1000ml</h3><p>Large biryani and complete meal portions</p></article>');
+    const inquiry = document.querySelector('[data-product-inquiry="Plastic Containers"]');
+    inquiry.dataset.inquiryMessage = inquiry.dataset.inquiryMessage.replace('50ml to 750ml', '50ml to 1000ml');
+  </script>
+  <script src="product-inquiry.js"></script>
+</body>
+</html>
