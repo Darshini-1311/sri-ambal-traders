@@ -2,10 +2,36 @@ const nav=document.querySelector('nav');
 document.querySelector('.modal')?.remove();
 document.querySelector('.cake-studio')?.remove();
 document.querySelectorAll('.product-card').forEach(card=>card.style.background='#e6c8b3');
+nav.querySelector('.nav-link')?.remove();
 nav.insertAdjacentHTML('beforeend','<div class="nav-centre"><a href="about.html">About Us</a><span>·</span><a href="clients.html">Our Clients</a><span>·</span><a href="contact.html">Contact</a></div>');
 const centre=document.querySelector('.nav-centre');
+const homeMenuToggle=document.createElement('button');
+homeMenuToggle.className='mobile-menu-toggle';
+homeMenuToggle.type='button';
+homeMenuToggle.setAttribute('aria-label','Open navigation menu');
+homeMenuToggle.setAttribute('aria-expanded','false');
+homeMenuToggle.textContent='☰';
+nav.append(homeMenuToggle);
 Object.assign(centre.style,{position:'absolute',left:'50%',top:'50%',transform:'translate(-50%,-50%)',display:'flex',gap:'13px',alignItems:'center',whiteSpace:'nowrap'});
 centre.querySelectorAll('a').forEach(link=>Object.assign(link.style,{color:'#fff9ec',textDecoration:'none',font:'600 1rem Plus Jakarta Sans, sans-serif',letterSpacing:'.08em',textTransform:'uppercase'}));
+homeMenuToggle.addEventListener('click',()=>{
+  const isOpen=centre.classList.toggle('is-open');
+  homeMenuToggle.setAttribute('aria-expanded',String(isOpen));
+  homeMenuToggle.setAttribute('aria-label',isOpen?'Close navigation menu':'Open navigation menu');
+  homeMenuToggle.textContent=isOpen?'×':'☰';
+});
+centre.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+  centre.classList.remove('is-open');
+  homeMenuToggle.setAttribute('aria-expanded','false');
+  homeMenuToggle.setAttribute('aria-label','Open navigation menu');
+  homeMenuToggle.textContent='☰';
+}));
+const renderHomeMenuToggle=isOpen=>{
+  homeMenuToggle.innerHTML=isOpen?'&times;':'<span></span><span></span><span></span>';
+};
+renderHomeMenuToggle(false);
+homeMenuToggle.addEventListener('click',()=>renderHomeMenuToggle(homeMenuToggle.getAttribute('aria-expanded')==='true'));
+centre.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>renderHomeMenuToggle(false)));
 document.querySelector('.hero-copy .eyebrow').textContent='YOUR COMPLETE PACKAGING PARTNER';
 document.querySelector('.hero-copy h1').innerHTML='Everything your<br><em>business needs.</em>';
 document.querySelector('.hero-text').textContent='A complete range of practical, presentable and versatile packaging solutions — made for the businesses behind every product.';
