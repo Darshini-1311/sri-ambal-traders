@@ -1,4 +1,4 @@
-document.querySelectorAll('.about-hero nav, .clients-hero nav, .contact-hero nav').forEach((nav) => {
+document.querySelectorAll('.about-hero nav, .contact-hero nav').forEach((nav) => {
   const menu = nav.querySelector('.nav-centre');
   if (!menu) return;
   const toggle = document.createElement('button');
@@ -10,7 +10,6 @@ document.querySelectorAll('.about-hero nav, .clients-hero nav, .contact-hero nav
   nav.append(toggle);
   const destinations = {
     'ABOUT US': 'about.html',
-    'OUR CLIENTS': 'clients.html',
     CONTACT: 'contact.html'
   };
   menu.querySelectorAll('a').forEach((link) => {

@@ -3,7 +3,7 @@ document.querySelector('.modal')?.remove();
 document.querySelector('.cake-studio')?.remove();
 document.querySelectorAll('.product-card').forEach(card=>card.style.background='#e6c8b3');
 nav.querySelector('.nav-link')?.remove();
-nav.insertAdjacentHTML('beforeend','<div class="nav-centre"><a href="about.html">About Us</a><span>·</span><a href="clients.html">Our Clients</a><span>·</span><a href="contact.html">Contact</a></div>');
+nav.insertAdjacentHTML('beforeend','<div class="nav-centre"><a href="about.html">About Us</a><span>·</span><a href="contact.html">Contact</a></div>');
 const centre=document.querySelector('.nav-centre');
 const homeMenuToggle=document.createElement('button');
 homeMenuToggle.className='mobile-menu-toggle';
